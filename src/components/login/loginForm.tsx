@@ -44,7 +44,7 @@ export default function LoginForm() {
         <p>{state.error}</p>
       </form>
       <Link className={styles.perdeu} href="/login/perdeu">
-        Perdeu a senha?
+        Esqueceu a senha?
       </Link>
       <div className={styles.cadastro}>
         <h2 className={styles.subtitle}>Cadastre-se</h2>
