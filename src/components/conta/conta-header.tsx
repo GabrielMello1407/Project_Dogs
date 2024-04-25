@@ -9,6 +9,8 @@ import styles from './conta-header.module.css';
 import useMedia from '@/hooks/use-media';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Logout from '@/actions/logout';
+import { useUser } from '@/context/userContext';
 
 function getTitle(pathname: string) {
   switch (pathname) {
@@ -30,8 +32,12 @@ export default function ContaHeader() {
     setMobileMenu(false);
   }, [pathname]);
 
-  function handleLogout() {
-    // userLogout();
+  const { setUser } = useUser();
+
+  async function handleLogout() {
+    await Logout();
+    // window.location.href = '/login'; hard refresh
+    setUser(null);
   }
 
   return (
