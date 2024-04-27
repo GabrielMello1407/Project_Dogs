@@ -8,7 +8,7 @@ type FotoIdParams = {
   };
 };
 
-export async function generateMetadata({ params }: FotoIdPage) {
+export async function generateMetadata({ params }: FotoIdParams) {
   const { data } = await photoGet(params.id);
 
   if (!data) return { title: 'Fotos' };
