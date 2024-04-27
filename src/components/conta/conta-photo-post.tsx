@@ -30,7 +30,7 @@ export default function ContaPhotoPost() {
   });
 
   const [img, setImg] = React.useState('');
-  function handleImageChange({ target }: React.ChangeEvent<HTMLInputElement>) {
+  function handleImgChange({ target }: React.ChangeEvent<HTMLInputElement>) {
     if (target.files) {
       setImg(URL.createObjectURL(target.files[0]));
     }
@@ -42,11 +42,11 @@ export default function ContaPhotoPost() {
         <Input label="Nome" name="nome" type="text" />
         <Input label="Peso" name="peso" type="number" />
         <Input label="Idade" name="idade" type="number" />
-        <Input
-          onChange={handleImageChange}
+        <input
+          onChange={handleImgChange}
+          type="file"
           name="img"
           id="img"
-          type="file"
           className={styles.file}
         />
         <ErrorMessage error={state.error} />
